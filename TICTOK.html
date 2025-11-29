@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simple Tic-Tac-Toe Web Game</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Meta for theme color on mobile -->
+  <meta name="theme-color" content="#f5f7fb" />
+</head>
+<body>
+  <main class="app">
+    <section class="game-card" role="application" aria-label="Tic Tac Toe game">
+      <header class="game-header">
+        <h1 class="title">Tic‑Tac‑Toe</h1>
+
+        <div class="top-controls">
+          <div class="mode-switch" role="group" aria-label="Game mode">
+            <button class="mode-btn active" data-mode="pvp" id="mode-pvp">2 Players</button>
+            <button class="mode-btn" data-mode="cpu" id="mode-cpu">vs Computer</button>
+          </div>
+
+          <div class="toggles">
+            <label class="toggle" title="Toggle dark mode">
+              <input type="checkbox" id="dark-toggle" />
+              <span class="track">
+                <span class="thumb"></span>
+              </span>
+              <span class="label">Dark</span>
+            </label>
+
+            <label class="toggle" title="Toggle sound">
+              <input type="checkbox" id="sound-toggle" checked />
+              <span class="track">
+                <span class="thumb"></span>
+              </span>
+              <span class="label">Sound</span>
+            </label>
+          </div>
+        </div>
+      </header>
+
+      <div class="game-body">
+        <aside class="scoreboard" aria-label="Scoreboard">
+          <div class="score-title">Scoreboard</div>
+          <div class="scores">
+            <div class="score-item">
+              <div class="score-icon x">X</div>
+              <div class="score-info">
+                <div class="score-label">X Wins</div>
+                <div class="score-value" id="score-x">0</div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-icon o">O</div>
+              <div class="score-info">
+                <div class="score-label">O Wins</div>
+                <div class="score-value" id="score-o">0</div>
+              </div>
+            </div>
+
+            <div class="score-item">
+              <div class="score-icon d">=</div>
+              <div class="score-info">
+                <div class="score-label">Draws</div>
+                <div class="score-value" id="score-draw">0</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="score-actions">
+            <button class="btn ghost" id="reset-scores">Reset Scores</button>
+          </div>
+        </aside>
+
+        <section class="board-panel">
+          <div class="status-bar" id="status">X's turn</div>
+
+          <div class="board" id="board" role="grid" aria-label="Tic Tac Toe board">
+            <button class="cell" data-index="0" aria-label="Cell 1" role="gridcell"></button>
+            <button class="cell" data-index="1" aria-label="Cell 2" role="gridcell"></button>
+            <button class="cell" data-index="2" aria-label="Cell 3" role="gridcell"></button>
+
+            <button class="cell" data-index="3" aria-label="Cell 4" role="gridcell"></button>
+            <button class="cell" data-index="4" aria-label="Cell 5" role="gridcell"></button>
+            <button class="cell" data-index="5" aria-label="Cell 6" role="gridcell"></button>
+
+            <button class="cell" data-index="6" aria-label="Cell 7" role="gridcell"></button>
+            <button class="cell" data-index="7" aria-label="Cell 8" role="gridcell"></button>
+            <button class="cell" data-index="8" aria-label="Cell 9" role="gridcell"></button>
+          </div>
+
+          <div class="controls">
+            <div class="control-actions">
+              <button class="btn primary" id="restart-btn">Restart</button>
+            </div>
+            <div class="meta-note">Tip: X always starts. In vs Computer mode, you play as X.</div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="game-footer">
+        <small>Made with care • Smooth UI • Keyboard accessible</small>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
